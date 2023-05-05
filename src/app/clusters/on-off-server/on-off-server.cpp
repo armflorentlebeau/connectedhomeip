@@ -172,7 +172,7 @@ EmberAfStatus OnOffServer::setOnOffValue(chip::EndpointId endpoint, chip::Comman
     // we either got a toggle, or an on when off, or an off when on,
     // so we need to swap the value
     newValue = !currentValue;
-    emberAfOnOffClusterPrintln("Toggle ep%x on/off from state %x to %x", endpoint, currentValue, newValue);
+    emberAfOnOffClusterPrintln("HELLO WORLD! Toggle ep%x on/off from state %x to %x", endpoint, currentValue, newValue);
 
     // the sequence of updating on/off attribute and kick off level change effect should
     // be depend on whether we are turning on or off. If we are turning on the light, we

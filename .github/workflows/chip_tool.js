@@ -36,25 +36,25 @@ async function main() {
 	await delay(60000);
 
 	console.log("Turn light on...");
-	mySocket.send("./out/debug/chip-tool onoff on 0x11 1\n");
+	mySocket.send("/home/pi/connectedhomeip/examples/chip-tool/out/debug/chip-tool onoff on 0x11 1\n");
 
 	console.log("Wait 5 seconds...");
 	await delay(5000);
 
 	console.log("Turn light off...");
-	mySocket.send("./out/debug/chip-tool onoff off 0x11 1\n");
+	mySocket.send("/home/pi/connectedhomeip/examples/chip-tool/out/debug/chip-tool onoff off 0x11 1\n");
 
 	console.log("Wait 5 seconds...");
 	await delay(5000);
 
 	console.log("Turn light on again...");
-	mySocket.send("./out/debug/chip-tool onoff on 0x11 1\n");
+	mySocket.send("/home/pi/connectedhomeip/examples/chip-tool/out/debug/chip-tool onoff on 0x11 1\n");
 
 	console.log("Wait 5 seconds...");
 	await delay(5000);
 
 	console.log("Turn light off again...");
-	mySocket.send("./out/debug/chip-tool onoff off 0x11 1\n");
+	mySocket.send("/home/pi/connectedhomeip/examples/chip-tool/out/debug/chip-tool onoff off 0x11 1\n");
 
 	console.log("Wait 5 seconds...");
 	await delay(5000);

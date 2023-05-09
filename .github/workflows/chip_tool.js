@@ -32,14 +32,17 @@ async function main() {
 	mySocket.onerror = function() {
 		console.log('WebSocket Connection Error.')};
 	
-	// Log in - comment the lines below if user has already logged in using the UI console
+	console.log("Wait 60s to ensure lighting-app is initialized...");
+	await delay(60000);
+	
+	// Log out
+	mySocket.send("\x04");
+        await delay(5000);
+	// Log in using the UI console
 	mySocket.send("pi\n");
 	await delay(1000);
         mySocket.send("raspberry\n");
         await delay(1000);
-
-	console.log("Wait 60s to ensure lighting-app is initialized...");
-	await delay(60000);
 
 	console.log("Turn light on...");
 	mySocket.send("/home/pi/connectedhomeip/examples/chip-tool/out/debug/chip-tool onoff on 0x11 1\n");
@@ -65,6 +68,9 @@ async function main() {
 	console.log("Wait 5 seconds...");
 	await delay(5000);
 
+	// Log out
+	mySocket.send("\x04");
+        await delay(5000);
 	console.log('Closing WebSocket...');
 	mySocket.close();
 		mySocket.onclose = function() {
